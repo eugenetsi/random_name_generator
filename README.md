@@ -1,6 +1,6 @@
 # Random Name Generator
 This is a simple random name generator in the format <{adjective}{seperator} {noun}>, that I find useful in naming ML model versions.
-  > Example: ==orange_audi==
+  > Example: **orange_audi**
 - The categories that fill `{adjective}` are:  
 	- colors 
 		-  [source](https://codepen.io/bagaski/full/RwKvybw )  
