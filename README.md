@@ -34,3 +34,10 @@ This is a simple random name generator in the format <{adjective}{seperator} {no
 - The `{seperator}` can be: `"-", "_" (default), " ", "."`  
 - ## Usage  
 	- after import call `get_name(sep='_')`  
+
+## Setup
+```bash
+python3 -m venv .venv
+source .venv/bin/activate
+pip install -r requirements.txt
+```
