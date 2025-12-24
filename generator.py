@@ -8,6 +8,7 @@ BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 DATAPATH = os.path.join(BASE_DIR, "data/")
 NOUNS = "nouns/"
 ADJ = "adjectives/"
+ALLOWED_SEPARATORS = ['_', '-', '', '.', ' ']
 
 def get_name(sep='_'):
     nouns_path = os.path.join(DATAPATH, NOUNS, 'nouns.pkl')
@@ -18,7 +19,7 @@ def get_name(sep='_'):
     with open(adjectives_path, 'rb') as f:
         adjectives = pickle.load(f)
 
-    if sep not in ['_', '-', '', '.']:
+    if sep not in ALLOWED_SEPARATORS:
         raise Exception('Not valid separator')
 
     return f'{random.choice(adjectives)}{sep}{random.choice(nouns)}'

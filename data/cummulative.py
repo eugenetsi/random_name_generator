@@ -7,13 +7,16 @@ DATAPATH = "./data/"
 NOUNS = "nouns/"
 ADJ = "adjectives/"
 
-noun_files = [f for f in listdir(DATAPATH + ADJ) if isfile(join(DATAPATH + ADJ, f))]
+adjective_sources = [
+    f for f in listdir(DATAPATH + ADJ)
+    if isfile(join(DATAPATH + ADJ, f)) and f.endswith(".csv")
+]
 
 cummulative = []
-for i in noun_files:
-    file = open(DATAPATH + ADJ + i, "r")
+for filename in adjective_sources:
+    file = open(DATAPATH + ADJ + filename, "r")
     data = list(csv.reader(file, delimiter=","))
-    print(i, len(data[0]))
+    print(filename, len(data[0]))
     cummulative.extend(data[0])
     file.close()
 
